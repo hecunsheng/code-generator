@@ -67,7 +67,8 @@ public class MethodInfo {
             methodDescription.setEnabled(getPropertiesDefaultTrue(values[i]));
             methodDescription.setMethodName(formatMethodName(values[i]));
             methodDescription.setComment(PropertiesUtils.getConfig(values[i].getMethodCommentKey()));
-            methodDescription.addParams(methodDescription.new ParamDescription(tableName + " 参数对象"));
+//            methodDescription.addParams(methodDescription.new ParamDescription(tableName + " 参数对象"));
+            methodDescription.addParams(methodDescription.new ParamDescription(" 参数对象"));
             methodDescriptionMap.put(values[i].toString(),methodDescription);
         }
         return methodDescriptionMap;
