@@ -228,9 +228,9 @@ public class FileOutPathInfo {
      *  格式化类名
      */
     private String fileNameFormat(FileTypeEnums typeEnums,String formatConfig) {
-        if (FileTypeEnums.XML.equals(typeEnums)){
-            return MessageFormat.format(formatConfig, tableName.toLowerCase());
-        }
+//        if (FileTypeEnums.XML.equals(typeEnums)){
+////            return MessageFormat.format(formatConfig, tableName.toLowerCase());
+////        }
         return MessageFormat.format(formatConfig, tableNameCamelCase);
     }
 
