@@ -45,7 +45,7 @@ public class TypeConversion {
         initJavaDataTypeFullPathMap();
 
         initType2JdbcTypeMap();
-        
+
         initParameterTypeMap();
     }
 
@@ -132,6 +132,7 @@ public class TypeConversion {
     }
 
     public static String type2JdbcType(String dbColmType) {
+        dbColmType = dbColmType.toUpperCase();
         String jdbcType = type2JdbcTypeMap.get(dbColmType);
         if (GeneratorStringUtils.isNotBlank(jdbcType)){
             return jdbcType;

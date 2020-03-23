@@ -69,7 +69,7 @@ public abstract class AbstractDbService implements DbService {
             ColumnInfo columnInfo = columnLists.get(i);
             javaColumnInfo = new JavaColumnInfo();
             javaColumnInfo.setDataType(getDataType(columnInfo.getDataType()));
-            javaColumnInfo.setColumnName(columnInfo.getColumnName());
+            javaColumnInfo.setColumnName(columnInfo.getColumnName().toLowerCase());
             javaColumnInfo.setColumnComment(replaceEnter(columnInfo.getColumnComment()));
             javaColumnInfo.setJavaColumnName(GeneratorStringUtils
                     .changeColmName2CamelFirstLower(columnInfo.getColumnName(), fieldRegex));
