@@ -14,9 +14,7 @@
             <trim suffixOverrides=",">
                 <#list mybatisXmlDefinition.columns as colm>
                     <#if colm??>
-                        <if test="null != item.${colm.javaColumnName}">${'#'}{item.${colm.javaColumnName}
-                            ,jdbcType=${colm.jdbcType}},
-                        </if>
+                        <if test="null != item.${colm.javaColumnName}">${'#'}{item.${colm.javaColumnName},jdbcType=${colm.jdbcType}},</if>
                     </#if>
                 </#list>
             </trim>
