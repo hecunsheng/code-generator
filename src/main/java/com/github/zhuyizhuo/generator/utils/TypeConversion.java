@@ -108,7 +108,7 @@ public class TypeConversion {
         mySqlDbType2JavaMap.put("LONGBLOB","String");
         mySqlDbType2JavaMap.put("TINYBLOB","String");
         mySqlDbType2JavaMap.put("TINYTEXT","String");
-        mySqlDbType2JavaMap.put("DECIMAL","BigDecimal");
+        mySqlDbType2JavaMap.put("DECIMAL","DOUBLE");
         mySqlDbType2JavaMap.put("TINYINT","Integer");
         mySqlDbType2JavaMap.put("BIGINT","Long");
         mySqlDbType2JavaMap.put("FLOAT","BigDecimal");
