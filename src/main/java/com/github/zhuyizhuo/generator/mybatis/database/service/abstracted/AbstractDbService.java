@@ -68,6 +68,10 @@ public abstract class AbstractDbService implements DbService {
         for (int i = 0; i < columnLists.size(); i++) {
             ColumnInfo columnInfo = columnLists.get(i);
             javaColumnInfo = new JavaColumnInfo();
+            //为了转换boolean
+            if ("tinyint(1)".equals(columnInfo.getColumnType())) {
+                columnInfo.setDataType("TINYINT(1)");
+            }
             javaColumnInfo.setDataType(getDataType(columnInfo.getDataType()));
             javaColumnInfo.setColumnName(columnInfo.getColumnName().toLowerCase());
             javaColumnInfo.setColumnComment(replaceEnter(columnInfo.getColumnComment()));

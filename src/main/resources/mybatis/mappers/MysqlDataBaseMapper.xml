@@ -26,7 +26,8 @@
         SELECT
         COLUMN_NAME columnName,
         COLUMN_COMMENT columnComment,
-        DATA_TYPE dataType
+        DATA_TYPE dataType,
+        COLUMN_TYPE columnType
         FROM
           INFORMATION_SCHEMA.COLUMNS
         <where>

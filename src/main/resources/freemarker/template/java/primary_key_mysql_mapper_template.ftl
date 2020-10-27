@@ -5,11 +5,11 @@ import java.util.List;
 import ${javaClassDefinition.POJO.fullPackage}.${javaClassDefinition.POJO.className};
 
 /**
- * description : ${tableInfo.tableName} table dao layer interface <br/>
- * time:    ${classCommentInfo.createTime} <br/>
- * @author  ${classCommentInfo.author} <br/>
- * @since   ${classCommentInfo.sinceVersion} <br/>
- * @version ${classCommentInfo.version} <br/>
+ * ${tableInfo.tableComment} ${tableInfo.tableName}
+ *
+ * @author  ${classCommentInfo.author}
+ * @version ${classCommentInfo.version}
+ * @date    ${classCommentInfo.createTime}
  */
 public interface ${javaClassDefinition.MAPPER.className} {
 <#if methodDescription.INSERT.enabled>

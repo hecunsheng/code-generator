@@ -2,9 +2,9 @@
 <#list mybatisXmlDefinition.columns as colm>
     <#if colm??>
         <#if colm.primaryKey>
-        <id column="${colm.columnName}" property="${colm.javaColumnName}"/>
+        <id property="${colm.javaColumnName}" column="${colm.columnName}"/>
         <#else>
-        <result column="${colm.columnName}" property="${colm.javaColumnName}"/>
+        <result property="${colm.javaColumnName}" column="${colm.columnName}"/>
         </#if>
     </#if>
 </#list>

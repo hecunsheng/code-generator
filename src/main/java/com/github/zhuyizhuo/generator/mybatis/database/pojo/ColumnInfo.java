@@ -13,6 +13,8 @@ public class ColumnInfo {
 	private String columnName;
 	/** 数据库字段类型 */
 	private String dataType;
+	/** 数据库字段类型 */
+	private String columnType;
 	/** 字段备注 */
 	private String columnComment;
 	/** 是否主键 */
@@ -22,28 +24,36 @@ public class ColumnInfo {
     }
 
     public String getColumnName() {
-		return columnName;
-	}
+        return columnName;
+    }
 
-	public void setColumnName(String columnName) {
-		this.columnName = columnName;
-	}
+    public void setColumnName(String columnName) {
+        this.columnName = columnName;
+    }
 
-	public String getDataType() {
-		return dataType;
-	}
+    public String getDataType() {
+        return dataType;
+    }
 
-	public void setDataType(String dataType) {
-		this.dataType = dataType;
-	}
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
+    }
 
-	public String getColumnComment() {
-		return columnComment;
-	}
+    public String getColumnType() {
+        return columnType;
+    }
 
-	public void setColumnComment(String columnComment) {
-		this.columnComment = columnComment;
-	}
+    public void setColumnType(String columnType) {
+        this.columnType = columnType;
+    }
+
+    public String getColumnComment() {
+        return columnComment;
+    }
+
+    public void setColumnComment(String columnComment) {
+        this.columnComment = columnComment;
+    }
 
     public boolean isPrimaryKey() {
         return primaryKey;
@@ -58,6 +68,7 @@ public class ColumnInfo {
         return "ColumnInfo{" +
                 "columnName='" + columnName + '\'' +
                 ", dataType='" + dataType + '\'' +
+                ", columnType='" + columnType + '\'' +
                 ", columnComment='" + columnComment + '\'' +
                 ", primaryKey=" + primaryKey +
                 '}';
