@@ -30,6 +30,7 @@ public class MysqlGenerateImpl extends FreemarkerGenerateService {
         addTemplatePath(ModuleEnums.MAPPER,false, "/freemarker/template/java/no_primary_key_mysql_mapper_template.ftl");
 
         addTemplatePath(ModuleEnums.POJO,null, "/freemarker/template/java/javabean.ftl");
+        addTemplatePath(ModuleEnums.DTO,null, "/freemarker/template/java/javabeanDTO.ftl");
     }
 
     @Override
