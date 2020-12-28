@@ -25,9 +25,13 @@ import java.util.List;
  */
 public abstract class AbstractDbService implements DbService {
 
-    /** 数据库表名分隔符 */
+    /**
+     * 数据库表名分隔符
+     */
     public static String tableRegex = "";
-    /** 字段分隔符 例如 order_no 的分隔符为 _ */
+    /**
+     * 字段分隔符 例如 order_no 的分隔符为 _
+     */
     public static String fieldRegex = "";
 
     protected DataBaseInfo getDataBaseInfo() {
@@ -43,7 +47,7 @@ public abstract class AbstractDbService implements DbService {
 
     protected List<String> getTables() {
         String includeTableName = PropertiesUtils.getProperties(ConfigConstants.GENERATE_TABLES_NAME);
-        if (GeneratorStringUtils.isNotBlank(includeTableName)){
+        if (GeneratorStringUtils.isNotBlank(includeTableName)) {
             return Splitter.on(",").splitToList(includeTableName);
         }
         return null;
@@ -51,6 +55,7 @@ public abstract class AbstractDbService implements DbService {
 
     /**
      * 将表信息处理成 java 信息
+     *
      * @param sourceTableInfo 数据库表信息
      * @param targetTableInfo 生成器所需的 java 对象
      */
@@ -58,7 +63,7 @@ public abstract class AbstractDbService implements DbService {
 
         targetTableInfo.setTableName(sourceTableInfo.getTableName());
         targetTableInfo.setTableSchema(sourceTableInfo.getTableSchema());
-        if (GeneratorStringUtils.isBlank(sourceTableInfo.getTableComment())){
+        if (GeneratorStringUtils.isBlank(sourceTableInfo.getTableComment())) {
             targetTableInfo.setTableComment(ClassCommentInfo.tableComment);
         } else {
             targetTableInfo.setTableComment(sourceTableInfo.getTableComment());
@@ -68,10 +73,6 @@ public abstract class AbstractDbService implements DbService {
         for (int i = 0; i < columnLists.size(); i++) {
             ColumnInfo columnInfo = columnLists.get(i);
             javaColumnInfo = new JavaColumnInfo();
-            //为了转换boolean
-            if ("tinyint(1)".equals(columnInfo.getColumnType())) {
-                columnInfo.setDataType("TINYINT(1)");
-            }
             javaColumnInfo.setDataType(getDataType(columnInfo.getDataType()));
             javaColumnInfo.setColumnName(columnInfo.getColumnName().toLowerCase());
             javaColumnInfo.setColumnComment(replaceEnter(columnInfo.getColumnComment()));
@@ -86,7 +87,7 @@ public abstract class AbstractDbService implements DbService {
     }
 
     protected String getDataType(String dataType) {
-        if (GeneratorStringUtils.isNotBlank(dataType) && dataType.contains("TIMESTAMP")){
+        if (GeneratorStringUtils.isNotBlank(dataType) && dataType.contains("TIMESTAMP")) {
             return "TIMESTAMP";
         }
         return dataType;
@@ -96,6 +97,7 @@ public abstract class AbstractDbService implements DbService {
 
     /**
      * 备注去除回车换行
+     *
      * @param columnComment 字段备注
      * @return 去除回车换行后返回
      */
@@ -103,11 +105,12 @@ public abstract class AbstractDbService implements DbService {
         if (GeneratorStringUtils.isBlank(columnComment)) {
             return "";
         }
-        return columnComment.replaceAll("\r"," ").replaceAll("\n"," ").replaceAll("\r\n"," ");
+        return columnComment.replaceAll("\r", " ").replaceAll("\n", " ").replaceAll("\r\n", " ");
     }
 
     /**
      * 数据库表名根据分隔符转为驼峰命名
+     *
      * @param tableName 数据库表名
      * @return 驼峰命名
      */

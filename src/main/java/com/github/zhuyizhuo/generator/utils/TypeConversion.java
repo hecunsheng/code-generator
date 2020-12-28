@@ -98,28 +98,6 @@ public class TypeConversion {
         oracleDbType2JavaMap.put("DATE","Date");
     }
     //原始
-//    private static void initMysqlType2JavaMap() {
-//        mySqlDbType2JavaMap.put("INT","Integer");
-//        mySqlDbType2JavaMap.put("VARCHAR","String");
-//        mySqlDbType2JavaMap.put("TEXT","String");
-//        mySqlDbType2JavaMap.put("CHAR","String");
-//        mySqlDbType2JavaMap.put("BLOB","String");
-//        mySqlDbType2JavaMap.put("LONGTEXT","String");
-//        mySqlDbType2JavaMap.put("LONGBLOB","String");
-//        mySqlDbType2JavaMap.put("TINYBLOB","String");
-//        mySqlDbType2JavaMap.put("TINYTEXT","String");
-//        mySqlDbType2JavaMap.put("DECIMAL","Double");
-//        mySqlDbType2JavaMap.put("TINYINT","Integer");
-//        mySqlDbType2JavaMap.put("BIGINT","Long");
-//        mySqlDbType2JavaMap.put("FLOAT","BigDecimal");
-//        mySqlDbType2JavaMap.put("DOUBLE","BigDecimal");
-//        mySqlDbType2JavaMap.put("DATE","Date");
-//        mySqlDbType2JavaMap.put("TIME","Date");
-//        mySqlDbType2JavaMap.put("DATETIME","Date");
-//        mySqlDbType2JavaMap.put("TIMESTAMP","Date");
-//        mySqlDbType2JavaMap.put("YEAR","Integer");
-//    }
-
     private static void initMysqlType2JavaMap() {
         mySqlDbType2JavaMap.put("INT","Integer");
         mySqlDbType2JavaMap.put("VARCHAR","String");
@@ -130,9 +108,8 @@ public class TypeConversion {
         mySqlDbType2JavaMap.put("LONGBLOB","String");
         mySqlDbType2JavaMap.put("TINYBLOB","String");
         mySqlDbType2JavaMap.put("TINYTEXT","String");
-        mySqlDbType2JavaMap.put("DECIMAL","BigDecimal");
-        mySqlDbType2JavaMap.put("TINYINT","Byte");
-        mySqlDbType2JavaMap.put("TINYINT(1)","Boolean");
+        mySqlDbType2JavaMap.put("DECIMAL","Double");
+        mySqlDbType2JavaMap.put("TINYINT","Integer");
         mySqlDbType2JavaMap.put("BIGINT","Long");
         mySqlDbType2JavaMap.put("FLOAT","BigDecimal");
         mySqlDbType2JavaMap.put("DOUBLE","BigDecimal");
